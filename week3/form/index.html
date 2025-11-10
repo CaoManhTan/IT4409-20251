@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 id="title">Tan's Form</h1>
+    <p>Thank's for your time doing our survey</p>
+    <form action="form" id="survey-form">
+        <label for="name" id="name-label">Name</label> <br>
+        <input type="text" id="name" placeholder="Enter your Name" required> <br>
+        <label for="email" id="email-label">Email</label> <br>
+        <input type="email" id="email" placeholder="Enter your Email" required> <br>
+        <label for="number" id="number-label">Age</label> <br>
+        <input type="number" id="number" min="10" max="100" placeholder="Age"> <br>
+        <label for="dropdown">Choose your role:</label>
+        <select name="role" id="dropdown">
+            <option value="Student">Student</option>
+            <option value="Teacher">Teacher</option>
+            <option value="Parent">Parent</option>
+        </select>
+        <br>
+        <input type="radio" name="group1" value ="Definitely">
+        <input type="radio" name="group1" value="Maybe">
+        <br>
+        <input type="checkbox" value="FE">
+        <input type="checkbox" value="BE">
+        <br>
+        <textarea name="y_kien" id="textarea1"></textarea>
+        <br>
+        <button id="submit" type="submit">Summit</button>
+    </form>
+</body>
+</html>

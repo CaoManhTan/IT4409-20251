@@ -1,0 +1,171 @@
+header {
+    color: white;
+    background-color: rgb(190, 0, 0);
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1vw;
+    line-height: 1.5;
+}
+.navbar-top, .navbar-left, .navbar-right, .navbar-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul {
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.box-img {
+    height: 6vw;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+.navbar-left {
+    margin-left: 1vw;
+}
+.navbar-right {
+    margin-right: 1vw;
+}
+.navbar-list {
+    background-color: rgb(127, 0, 0);
+    justify-content: space-around;
+}
+.main-left, .extra-left {
+    width: 30vw;
+    margin-left: 1vw;
+    margin-top: 1vw;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.background {
+    position: relative;
+}
+.avatar {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.avatar img {
+    height: 7vw;
+    width: 7vw;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: bottom;
+}
+.card-body {
+    margin-top: 4vw;
+    padding-right: 4vw;
+}
+.tabs {
+    display: flex;
+    padding-left: 2vw;
+    border-bottom: 1px solid #ccc;
+}
+.tabs li {
+    /* Viền xung quanh tab */
+    border: 1px solid #ccc;
+    /* Loại bỏ viền dưới để hòa vào khối nội dung */
+    border-bottom: none; 
+    /* Khoảng đệm bên trong tab */
+    padding: 10px;
+    /* Chỉnh màu nền và cỡ chữ */
+    background-color: white;
+    cursor: pointer;
+    margin-right: -1px;
+}
+.trang-thai, .ly-lich {
+    margin-left: -2vw;
+    border-top-left-radius:10px ;
+}
+.tabs li:hover {
+    color: red;
+}
+.tabs-content {
+    margin-left: 2vw;
+}
+.content {
+    margin-left: -2vw;
+    background-color: white;
+}
+.status-value {
+    color : teal;
+}
+main {
+    display: flex;
+    flex-direction: row;
+}
+.right {
+    width: 60vw;
+    margin-left: 2vw;
+    margin-top: 1vw;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border-radius: 20px;
+    overflow: hidden;
+}
+.nav-for-content {
+    padding-left: 2vw;
+}
+.label {
+    padding-left: 2vw;
+    font-size: larger;
+}
+.label strong {
+    text-decoration: underline;
+    text-decoration-color: grey;
+}
+.thong-tin-ca-nhan, .thong-tin-cha {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 1vw;
+}
+.thong-tin-ca-nhan div:nth-child(-n+3), .thong-tin-cha div:nth-child(-n+3) 
+{
+    width: 33.33%;
+    margin-left: -1vw;
+}
+.thong-tin-ca-nhan div:last-child, .thong-tin-cha div:last-child {
+    width: 100%;
+    margin-left: -1vw;
+    padding-bottom: 2vw;
+}
+.thong-tin-ca-nhan ul, .thong-tin-cha ul {
+    margin-top: 0; 
+    margin-bottom: 0;
+}
+.thong-tin-gia-dinh label {
+    padding-left: 3vw;
+    font-size: larger;
+    padding-bottom: 1vw;
+}
+.label {
+    display: block;
+    margin-bottom: 1vw;
+}
+.thong-tin-khac ul{
+    display: flex;
+    flex-direction: row;
+}
+.thong-tin-khac div {
+    width: 50%;
+    padding: 0 3vw;
+}
+.thong-tin-khac {
+    display: flex;
+    flex-direction: row;
+}
