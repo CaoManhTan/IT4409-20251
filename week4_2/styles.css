@@ -1,0 +1,35 @@
+.button {
+    margin-top: 20px;
+}
+
+table {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+button {
+    padding: 10px;
+    cursor: pointer;
+}
+
+th,
+td {
+    border: 1px solid grey;
+    text-align: center;
+    padding: 5px;
+}
+
+.grade-a {
+    background-color: lightgreen;
+}
+
+.grade-f {
+    background-color: grey;
+}
+
+.active {
+    background-color: lightslategray;
+    transform: translateY(1px);
+    border-radius: 3px;
+}

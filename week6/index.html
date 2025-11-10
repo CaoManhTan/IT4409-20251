@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tra Cứu Kết Quả Học Tập</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>📚 Trang Tra Cứu Kết Quả Học Tập</h1>
+
+    <div id="search-area">
+        <label for="student-id">Mã Số Sinh Viên:</label>
+        <input type="text" id="student-id" placeholder="Nhập mã sinh viên (ví dụ: 20521001)">
+        <button id="search-btn">Tra Cứu</button>
+    </div>
+
+    <div id="student-info"></div>
+
+    <p id="loading-status"></p>
+
+    <table id="results-table">
+        <thead>
+            <tr>
+                <th>Mã Học Phần</th>
+                <th>Tên Học Phần</th>
+                <th>Số Tín Chỉ</th>
+                <th>Học Kỳ</th>
+                <th>Điểm Số (Hệ 10)</th>
+                <th>Điểm Chữ</th>
+            </tr>
+        </thead>
+        <tbody id="results-body">
+        </tbody>
+    </table>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
