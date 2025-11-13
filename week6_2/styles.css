@@ -1,0 +1,16 @@
+#resultTable {
+    max-width: 100%;
+    text-align: center;
+    visibility: hidden;
+    border-collapse: collapse;
+}
+
+#resultTable td,
+#resultTable th {
+    border: 1px solid grey;
+    padding: 10px;
+}
+
+#thead {
+    visibility: inherit;
+}
