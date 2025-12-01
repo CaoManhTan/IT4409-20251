@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Users với Axios & Async/Await</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        /* CSS cho Bảng */
+        #userTable {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        #userTable th,
+        #userTable td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        #userTable th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        #userTable tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .action-btn {
+            margin-right: 5px;
+            padding: 6px 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            color: white;
+        }
+
+        .edit-btn {
+            background-color: #ffc107;
+        }
+
+        .delete-btn {
+            background-color: #dc3545;
+        }
+
+        /* CSS cho Form và Modal */
+        #createForm,
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Modal Style */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 8px;
+        }
+
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* CSS cho Lỗi và Tìm kiếm */
+        #errorMessage {
+            color: red;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        #searchContainer {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        #paginationControls {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        #paginationControls button {
+            background-color: #6c757d;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Ứng Dụng CRUD Người Dùng (Axios)</h1>
+
+        <div id="errorMessage"></div>
+
+        <h2>➕ Thêm Người Dùng Mới</h2>
+        <form id="createForm">
+            <div class="form-group"><input type="text" id="newName" placeholder="Tên" required></div>
+            <div class="form-group"><input type="text" id="newEmail" placeholder="Email" required></div>
+            <div class="form-group"><input type="text" id="newPhone" placeholder="Điện thoại"></div>
+            <button type="submit">Thêm Người Dùng</button>
+        </form>
+
+        <hr>
+
+        <div id="searchContainer">
+            <h2>🔍 Danh Sách Người Dùng</h2>
+            <input type="text" id="searchInput" placeholder="Tìm kiếm theo Tên..."
+                style="flex-grow: 1; max-width: 300px;">
+        </div>
+
+        <table id="userTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên</th>
+                    <th>Email</th>
+                    <th>Điện thoại</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody id="userTableBody">
+            </tbody>
+        </table>
+
+        <div id="paginationControls">
+        </div>
+    </div>
+
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>✏️ Chỉnh Sửa Người Dùng</h2>
+            <form id="editForm">
+                <input type="hidden" id="editId">
+                <div class="form-group"><label>Tên:</label><input type="text" id="editName" required></div>
+                <div class="form-group"><label>Email:</label><input type="email" id="editEmail" required></div>
+                <div class="form-group"><label>Điện thoại:</label><input type="tel" id="editPhone"></div>
+                <button type="submit">Lưu Thay Đổi</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
